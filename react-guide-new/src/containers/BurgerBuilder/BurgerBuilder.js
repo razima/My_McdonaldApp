@@ -94,32 +94,18 @@ componentDidMount () {
     }
 
     loadingHandler = () => {
-        // console.log("rojin");
-        // this.setState({orderSummaryDone: true});
-        // const order = {
-        //     ingredients: this.state.ingredients,
-        //     price: this.state.totalPrice,
-        //     customer: {
-        //         name: 'Rojin azima',
-        //         address: {
-        //             street: 'Teststreet1',
-        //             zipcode: '85281',
-        //             country:'mycountry'
-        //         },
-        //         email:'email'
-        //     },
-        //     deliveryMethod: 'fast'
-        // }
-        // instance.post('/orders.json', order)
-        // .then(response => {
-        //    this.setState({orderSummaryDone: false, purchasing: false});
-        // })
-        // .catch(error => 
-        //  {
-        //     this.setState({orderSummaryDone: false, purchasing: false});
-        // })
+        const queryParams = [];
+        //looping throuhg 
+        for (let i in this.state.ingredients){
+            queryParams.push(encodeURIComponent(i)+ '=' + encodeURIComponent(this.state.ingredients[i]));
+        }
+        //push to checkout manually
 
-        this.props.history.push('/checkout');
+        const queryString = queryParams.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        });
     }
     render(){
         
