@@ -21,24 +21,24 @@ import Spinner from '../../../components/UI/Spinner/Spinner'
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price,
-            // customer: {
-            //     name: 'Rojin azima',
-            //     address: {
-            //         street: 'Teststreet1',
-            //         zipcode: '85281',
-            //         country:'mycountry'
-            //     },
-            //     email:'email'
-            // },
-            // deliveryMethod: 'fast'
+            customer: {
+                name: 'Rojin azima',
+                address: {
+                    street: 'Teststreet1',
+                    zipcode: '85281',
+                    country:'mycountry'
+                },
+                email:'email'
+            },
+            deliveryMethod: 'fast'
         }
          instance.post('/orders.json', order)
         .then(response => {
-           this.setState({orderSummaryDone: false, purchasing: false});
+           this.setState({orderSummaryDone: false});
         })
         .catch(error => 
          {
-            this.setState({orderSummaryDone: false, purchasing: false});
+            this.setState({orderSummaryDone: false});
         })
        
         console.log(this.props.ingredients);
