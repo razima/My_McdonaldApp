@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
-
+/*
+OrderSummary class is a component that render a 
+For Loop through Ingredients summary, 
+based on the key and return the key
+it then tretunrs a page wrpaped in AUX with Buttons.
+Buttons have their own css types and 
+on click they take the purchase status
+*/
     class OrderSummary extends Component {
        //could be fnc component, doesnt have to be a class
        //not required

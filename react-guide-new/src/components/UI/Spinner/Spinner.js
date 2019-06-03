@@ -5,7 +5,9 @@ import Aux from '../../../hoc/Aux/Aux';
 
 const spinner = () => (
 
-    <div className={classes.Loader} >Loading...</div> 
+    <div className={classes.Loader} >
+        Loading...
+    </div> 
 
 
 );

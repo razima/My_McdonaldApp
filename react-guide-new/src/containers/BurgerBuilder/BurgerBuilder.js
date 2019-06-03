@@ -10,6 +10,10 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
+
+/*when calling OrderSummary, we make an instance of it with properties
+& before return, LoadHandler() if it is tru then OrderSummary will only show Spinner    
+*/
 const INGREDIENT_PRICES = {
     lettuce: 0.60,
     cheese: .50,
@@ -107,8 +111,8 @@ componentDidMount () {
             search: '?' + queryString
         });
     }
-    render(){
-        
+    render()
+    {
         const disabledInfo = {
             ...this.state.ingredients
             //copy in immutable way

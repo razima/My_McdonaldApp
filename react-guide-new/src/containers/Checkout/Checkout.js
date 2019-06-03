@@ -5,13 +5,7 @@ import ContactData from './ContactData/ContactData';
 class Checkout extends Component {
    
     state= {
-        // ingredients : {
-        //     bacon : 1,
-        //     cheese: 1,
-        //     lettuce: 1,
-        //     meat: 1
-        // } 
-        //instead
+       
         ingredients: null,
         price: 0
     }
@@ -50,16 +44,17 @@ class Checkout extends Component {
             ingredients= {this.state.ingredients}
             CheckoutCancel={this.checkoutCancelHandler}
             CheckoutContinue={this.checkoutContinuedHandler}/>
-        <Route path={this.props.match.path + '/contact-data'} 
-        render={
-            () => 
-            (
-                <ContactData 
-                    ingredients = {this.state.ingredients} 
-                    price={this.state.totalPrice}/>
+        <Route 
+            path={this.props.match.path + '/contact-data'} 
+                render={
+                    () => 
+                    (
+                        <ContactData 
+                            ingredients = {this.state.ingredients} 
+                            price={this.state.totalPrice}/>
 
-            )
-        }
+                    )
+                }
          />
  {/* component={ContactData} */}
       </div>

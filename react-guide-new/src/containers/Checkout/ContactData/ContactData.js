@@ -15,9 +15,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner'
         }
     orderHandler = (event) => {
         event.preventDefault();
-        //accessing ings
- //command K command U 
- // to un comment
+        this.setState({ loading: true});
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price,
@@ -32,13 +30,14 @@ import Spinner from '../../../components/UI/Spinner/Spinner'
             },
             deliveryMethod: 'fast'
         }
+
          instance.post('/orders.json', order)
         .then(response => {
-           this.setState({orderSummaryDone: false});
+           this.setState({ loading: false});
         })
         .catch(error => 
          {
-            this.setState({orderSummaryDone: false});
+            this.setState({ loading: false});
         })
        
         console.log(this.props.ingredients);
